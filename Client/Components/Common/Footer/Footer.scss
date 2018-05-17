@@ -1,0 +1,85 @@
+@import '../../theme.scss';
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow: auto;
+  margin: 0;
+  bottom: 0;
+  left: 0;
+  height: 300px;
+  position: relative;
+  background-color: black;
+
+  &::before {
+    position: absolute;
+    content: '';
+    top: 0px;
+    height: 9px;
+    width: 100%;
+    background-size: 25px 25px;
+    background-position: -5px -3px;
+    background-image: -webkit-radial-gradient(50% 0%, circle, white 50%, transparent 55%);
+    background-image: -moz-radial-gradient(50% 0%, circle, white 50%, transparent 55%);
+    background-image: radial-gradient(circle at 50% 0%, white 50%, transparent 55%);
+  }
+
+  .footer-logo {
+    position: relative;
+    top: 50px;
+    img {
+      height: 80px;
+      width: 100px;
+    }
+  }
+
+  span {
+    position: relative;
+    color: white;
+    top: 60px;
+    font-family: 'Droid Serif', serif;
+    font-style: italic;
+    font-size: 23px;
+  }
+
+  .social-media-links {
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    top: 80px;
+
+    .social-images {
+      display: flex;
+      align-items: center;
+      border-radius: 20px;
+      background-color:#1b1c1d;
+      perspective: 600px;
+    }
+
+    .social-images img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      padding: 8px;
+      transition: transform 1s;
+    }
+
+    .social-images img:hover {
+      transform: translateZ(100px);
+    }
+
+    .facebook, .snapchat {
+      margin-left: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .footer-container {
+    span {
+      text-align: center;
+    }
+  }
+}
